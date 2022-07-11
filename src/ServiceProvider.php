@@ -2,9 +2,7 @@
 
 namespace Wl1524520\Response;
 
-use Illuminate\Support\ServiceProvider;
-
-class ResponseServiceProvider extends ServiceProvider
+class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     public function boot()
     {
@@ -14,7 +12,7 @@ class ResponseServiceProvider extends ServiceProvider
     protected function registerPublishing()
     {
         if ($this->app->runningInConsole()) {
-            $this->publishes([__DIR__.'/../helpers/response.php' => app_path('response.php')], 'wanglu');
+            $this->publishes([__DIR__.'/../helpers/response.php' => app_path('response.php')], 'response-file');
         }
     }
 }

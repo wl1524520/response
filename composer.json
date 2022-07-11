@@ -13,5 +13,12 @@
         "psr-4": {
             "Wl1524520\\Response\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wl1524520\\Response\\ServiceProvider"
+            ]
+        }
     }
 }
