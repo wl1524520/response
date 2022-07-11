@@ -1,18 +1,25 @@
-<h1 align="center"> response </h1>
+<h1 align="center"> API 响应定义 </h1>
 
 <p align="center"> .</p>
 
 
-## Installing
+## 安装
 
 ```shell
 $ composer require wl1524520/response -vvv
 $ php artisan vendor:publish --tag=wanglu-response --force
 ```
 
-## Usage
+## 使用
 
-TODO
+在项目 composer.json 中添加如下项目
+```php
+"autoload": {
+    "files": [
+        "app/response.php"
+    ]
+},
+```
 
 ## Contributing
 

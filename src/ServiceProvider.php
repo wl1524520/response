@@ -13,13 +13,11 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             // 响应文件
-            $this->publishes([__DIR__.'/../helpers/response.php' => app_path('response.php')], 'wanglu-response');
-
-            // 自定义异常返回
             $this->publishes([
+                __DIR__.'/../helpers/response.php' => app_path('response.php'),
                 __DIR__.'/../exceptions/InternalException.php' => app_path('Exceptions/InternalException.php'),
                 __DIR__.'/../exceptions/InvalidRequestException.php' => app_path('Exceptions/InvalidRequestException.php'),
-            ], 'wanglu-exceptions');
+            ], 'wanglu-response');
         }
     }
 }
