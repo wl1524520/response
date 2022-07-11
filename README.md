@@ -7,6 +7,7 @@
 
 ```shell
 $ composer require wl1524520/response -vvv
+$ php artisan vendor:publish --tag=wanglu-response --force
 ```
 
 ## Usage
