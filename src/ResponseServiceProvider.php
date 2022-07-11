@@ -2,7 +2,9 @@
 
 namespace Wl1524520\Response;
 
-class WangResponse
+use Illuminate\Support\ServiceProvider;
+
+class ResponseServiceProvider extends ServiceProvider
 {
     public function boot()
     {

@@ -11,7 +11,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Wl1524520\\Response\\": "src"
+            "Wl1524520\\Response\\": "src/"
         }
     }
 }
