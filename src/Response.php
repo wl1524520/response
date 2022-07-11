@@ -8,6 +8,6 @@ class WangResponse
     {
         $this->publishes([
             __DIR__.'/helpers/response.php' => app_path('response.php'),
-        ]);
+        ], 'wanglu-response');
     }
 }
