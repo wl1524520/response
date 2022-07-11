@@ -1,0 +1,17 @@
+{
+    "name": "wl1524520\/response",
+    "description": "Package description here.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wang Lu",
+            "email": "wl1524520@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Wl1524520\\Response\\": "src"
+        }
+    }
+}
