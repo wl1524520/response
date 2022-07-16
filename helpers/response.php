@@ -13,13 +13,15 @@ function responseJSON($data)
 
 // Success 响应 200 和预设『操作成功！』的 JSON 数据
 // 执行某个『没有具体返回数据』的『变更』操作成功后调用，例如删除、修改密码、修改手机号
-function responseSuccess()
+function responseSuccess($msg = '操作成功！')
 {
     return response()->json([
         'success' => True,
-        'message' => "操作成功！",
+        'message' => $msg,
     ]);
 }
+
+// 待废除
 function responseSuccessMessage($msg = '操作成功！')
 {
     return response()->json([
@@ -30,6 +32,15 @@ function responseSuccessMessage($msg = '操作成功！')
 
 // Data 响应 200 和带 data 键的 JSON 数据
 // 执行『更新操作』成功后调用，例如更新话题，成功后返回已更新的话题
+function responseData($data)
+{
+    return response()->json([
+        'success' => True,
+        'data' => $data,
+    ]);
+}
+
+// 待废除
 function responseSuccessData($data)
 {
     return response()->json([
@@ -93,9 +104,33 @@ function responseBadRequest($msg = '')
 
 // 在解析用户请求，请求的格式或者方法不符合预期时调用
 // 算是 responseBadRequest 的别名
+function responseError($msg)
+{
+    return responseBadRequest($msg);
+}
+
+// 待废除
 function responseErrorMessage($msg)
 {
     return responseBadRequest($msg);
+}
+
+// ValidationError 处理表单验证不通过的错误，返回的 JSON 示例：
+//         {
+//             "errors": {
+//                 "phone": [
+//                     "手机号为必填项，参数名称 phone",
+//                     "手机号长度必须为 11 位的数字"
+//                 ]
+//             },
+//             "message": "请求验证不通过，具体请查看 errors"
+//         }
+function responseValidationError($errors)
+{
+    return response()->json([
+        'message' => "请求验证不通过，具体请查看 errors",
+        'errors' => $errors,
+    ])->setStatusCode(422);
 }
 
 // Unauthorized 响应 401，未传参 msg 时使用默认消息
