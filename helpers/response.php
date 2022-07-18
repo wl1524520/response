@@ -21,27 +21,9 @@ function responseSuccess($msg = '操作成功！')
     ]);
 }
 
-// 待废除
-function responseSuccessMessage($msg = '操作成功！')
-{
-    return response()->json([
-        'success' => True,
-        'message' => $msg,
-    ]);
-}
-
 // Data 响应 200 和带 data 键的 JSON 数据
 // 执行『更新操作』成功后调用，例如更新话题，成功后返回已更新的话题
 function responseData($data)
-{
-    return response()->json([
-        'success' => True,
-        'data' => $data,
-    ]);
-}
-
-// 待废除
-function responseSuccessData($data)
 {
     return response()->json([
         'success' => True,
@@ -105,12 +87,6 @@ function responseBadRequest($msg = '')
 // 在解析用户请求，请求的格式或者方法不符合预期时调用
 // 算是 responseBadRequest 的别名
 function responseError($msg)
-{
-    return responseBadRequest($msg);
-}
-
-// 待废除
-function responseErrorMessage($msg)
 {
     return responseBadRequest($msg);
 }
